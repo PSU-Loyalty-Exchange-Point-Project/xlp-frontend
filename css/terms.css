@@ -4,7 +4,7 @@ body {
     font-size: 14px;
     line-height: 1.8;
     font-weight: 400;
-    font-family: 'Montserrat';
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     /* background-image: url("../images/signup-bg.jpg"); */
     background-color:  #3c3e4a;
     background-repeat: no-repeat;

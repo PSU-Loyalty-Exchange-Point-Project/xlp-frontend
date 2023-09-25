@@ -65,6 +65,7 @@
   
   body {
     font-size: 14px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.8;
     font-weight: 400;
     /* background-image: url("../images/signup-bg.jpg"); */
@@ -107,15 +108,6 @@
     -o-align-items: center;
     -ms-align-items: center; }
   
-  .position-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%); }
   
   .signup-content {
     background:#353643;

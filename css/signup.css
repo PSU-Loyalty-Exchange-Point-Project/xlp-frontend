@@ -288,7 +288,25 @@ input[type=checkbox]:not(old):checked + label > span:before {
   margin-top: -32px;
   position: relative;
   z-index: 2;
-  color: #555; }
+  color: #555; } 
+
+  .password-container {
+  position: relative;
+  width: 200px;
+}
+
+#password-input {
+  width: 100%;
+  padding-right: 20px; /* leave space for the eye icon */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 95px;
+  top: 43.5%;
+  transform: translateY(-50%); /* Center vertically */
+  cursor: pointer;
+}
 
 @media screen and (max-width: 768px) {
   .container {

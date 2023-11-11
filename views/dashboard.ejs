@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loyalty Points Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Main css -->
+      <link rel="stylesheet" href="/public/dashboard.css">
+    
+      </head>
+      <body>
+
+        
+       <!-- Responsive Sidebar -->
+<div class="sidebar">
+    <div class="sidebar-content">
+        <h1 class="sidebar-brand">XLP</h1>
+        <div class="sidebar-links">
+            <a href="#profile" class="sidebar-link">Profile</a>
+            <a href="#profile" class="sidebar-link">About</a>
+            <a href="#profile" class="sidebar-link">Contact</a>
+            <!-- Other links if needed -->
+        </div>
+    </div>
+    <button class="btn btn-warning btn-sm sidebar-signout" id="signOutButton">Sign Out</button>
+</div>
+
+
+
+      
+      <div class="container text-center">
+          <!-- Total Points Balance (Centered) -->
+          <div class="row justify-content-center" style="margin-top: 10vh;">
+              <div class="col-md-6">
+                  <div class="balance-display">
+                      <h2>Total Points Balance</h2>
+                      <p class="points-balance">$13910</p>
+                  </div>
+              </div>
+          </div>
+      
+          <!-- Recent Transactions (Initially Showing Latest Two) -->
+          <div class="row justify-content-center mt-4">
+              <div class="col-md-6">
+                  <h3>Recent Transactions</h3>
+                  <div class="card p-3 transaction-card" id="transactions-container">
+                      <!-- Example Transactions (First two will be initially visible) -->
+                      <ul class="list-group list-group-flush" id="transaction-list">
+                          <li class="list-group-item">[org. name] - Amount: [$123]</li>
+                          <li class="list-group-item"> [org. name]- Amount: [$857483]</li>
+                          <li class="list-group-item extra">[org. name] - Amount: [$56]</li>
+                          <!-- More transactions will be added here and initially hidden -->
+                      </ul>
+                  </div>
+                  <button class="btn btn-custom mt-2" id="toggleButton" onclick="toggleTransactions()">Show More</button>
+              </div>
+              
+          </div>
+          
+
+
+    
+
+
+        
+         
+          
+    </div>
+</div>
+
+      
+      <!-- Existing scripts plus new script for showing more transactions -->
+      <script src="/js/main.js"></script>
+      
+      </body>
+      </html>
+      
+    

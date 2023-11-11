@@ -18,3 +18,23 @@
     });
 
 })(jQuery);
+
+function toggleTransactions() {
+  var extraTransactions = document.querySelectorAll('.extra');
+  var button = document.getElementById('toggleButton');
+
+  // Check if the first extra transaction is visible
+  if (extraTransactions[0].style.display === 'none' || extraTransactions[0].style.display === '') {
+      // Show extra transactions
+      for (var i = 0; i < extraTransactions.length; i++) {
+          extraTransactions[i].style.display = 'block';
+      }
+      button.textContent = 'Show Less'; // Change button text
+  } else {
+      // Hide extra transactions
+      for (var i = 0; i < extraTransactions.length; i++) {
+          extraTransactions[i].style.display = 'none';
+      }
+      button.textContent = 'Show More'; // Change button text
+  }
+}

@@ -31,7 +31,7 @@ h2, h3 {
 
 /* Adjustments for centering and alignment */
 .balance-display, .recent-transactions-container {
-    margin: auto; /* Center the containers */
+    margin: 15px; /* Center the containers */
     max-width: 600px; /* Adjust the width as needed for alignment */
 }
 
@@ -39,8 +39,9 @@ h2, h3 {
 .transaction-card {
     max-height: 300px;
     overflow-y: auto;
+    margin: 15px;
+    font-weight: bold;
 }
-
 
 
 
@@ -84,6 +85,21 @@ h2, h3 {
     font-size: 2em;
     color: #f0ad4e;
 }
+.btn-add-balance {
+    background-color: transparent;
+    font-weight: bold;
+    color: #faf2e8; /* Color of the button */
+    border: none; /* No border */
+    font-size: 1.3em; /* Size of the plus symbol */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    /*margin-left:5px; Space between the text and the button */
+    vertical-align: middle; /* Align with the text */
+}
+
+.btn-add-balance:hover {
+    color: #ffffff; /* Change color on hover */
+    background-color: #f0ad4e; /* Change background on hover */
+}
 
 .list-group-item {
     background-color: #3c3e4a;
@@ -113,48 +129,110 @@ h2, h3 {
 .sidebar {
     background-color: #2c2e3f;
     color: #ffffff;
-    padding: 15px;
+    padding: 20px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 250px; /* Adjust as needed */
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Keeps the sign-out button at the bottom */
-}
-
-.sidebar-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center align the content */
-    flex-grow: 1; /* Allows the content to grow and take available space */
-    justify-content: center; /* Center content vertically */
+    justify-content: space-between; /* This will push the bottom section to the end */
 }
 
 .sidebar-brand {
-    font-size: 1.5em;
-    margin-bottom: 1em;
+    text-align: center;
+    font-weight: bold;
+ /* Spacing below the brand name */
+    font-size: 20px;
 }
 
-.sidebar-links {
+.sidebar-middle {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center align links */
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center; /* Center buttons vertically */
 }
 
-.sidebar-link {
+.sidebar-button {
+    margin-bottom: 20px; /* Spacing between buttons */
+    width: 100%; /* Full width buttons */
+}
+
+.sidebar-bottom {
+    text-align: center;
+    margin-top: auto; /* Push to the bottom */
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 250px; /* Same as sidebar width */
+    /* ... other styles ... */
+}
+
+
+    .main-content {
+        margin-left: 0;
+    }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+
+
+/* Footer styles */
+.footer {
+    position: fixed;
+    background-color: #2c2e3f; /* Adjust to match your color scheme */
+    color: #ffffff;
+    padding: 20px 0;
+    left: 0;
+    bottom: 0;
+    height: 150px;
+    width: 100%;
+}
+
+.footer .container {
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly; /* Evenly space items */
+    flex-wrap: wrap; /* Wrap items for smaller screens */
+}
+
+.footer-section {
+    text-align: center; /* Center the text within each section */
+    margin-bottom: 10px;
+}
+.footer-section {
+    /* ... existing styles ... */
+    max-width: 200px; /* Control the width of the footer sections */
+}
+
+.footer-section p {
+    font-size: 0.9em; /* Adjust font size for the description */
+    color: #dcdcdc; /* Lighter color for the description text */
+    margin: 5px 0; /* Adjust spacing between lines */
+}
+
+/* ... Rest of the styles ... */
+
+
+.footer-title {
+    font-weight: bold;
     color: #f0ad4e;
-    text-decoration: none;
-    margin-bottom: 0.5em;
+    margin-bottom: 5px; /* Space between title and text */
 }
 
-.sidebar-signout {
-    width: 100%; /* Full width for alignment */
-    text-align: center; /* Center text for aesthetic */
-}
-
-
-
-
+    .footer-section {
+        margin-bottom: 20px;
+    }

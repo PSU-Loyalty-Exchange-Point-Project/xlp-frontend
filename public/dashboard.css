@@ -95,11 +95,11 @@ h2, h3 {
     /*margin-left:5px; Space between the text and the button */
     vertical-align: middle; /* Align with the text */
 }
-
 .btn-add-balance:hover {
-    color: #ffffff; /* Change color on hover */
-    background-color: #f0ad4e; /* Change background on hover */
+    color: rgb(255, 255, 255); /* Change color on hover */
+     /* Change background on hover */
 }
+
 
 .list-group-item {
     background-color: #3c3e4a;
@@ -124,6 +124,99 @@ h2, h3 {
 .extra {
     display: none; /* Initially hide extra transactions */
 }
+
+
+
+
+/* Styles for the Gift Cards Section */
+.gift-cards-container {
+    max-width: 600px;
+    margin: auto;
+    background-color: #484a55;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Styles for the Gift Cards */
+.gift-card {
+    background-color:blanchedalmond;
+    color: #dcdcdc;
+    text-align: center;
+    color: #000000; /* Black color for the text */
+    font-weight: bold; /* Make text bold */
+    height: 150px; /* Fixed height for all cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Styles for the View Cart Button */
+.view-cart {
+    position: fixed;
+    top: 30px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+}
+
+.btn-cart {
+    background-color:#f1f3ff; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none; /* Remove border */
+    font-size: 1em; /* Size of the text and symbol */
+    cursor: pointer;
+    width: 50px; /* Square shape */
+    height: 50px; /* Square shape */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+
+.btn-cart:hover {
+    background-color: #87b5e7; /* Darker color on hover */
+}
+
+/* ... Rest of the styles ... */
+
+
+
+
+
+.gift-card p, .gift-card  {
+    font-weight: bold; /* Make text bold */
+    color: #000000; /* Ensuring text is black */
+}
+
+
+
+
+.add-to-cart {
+    color: #007bff; /* Blue color for the link */
+    text-decoration: none; /* Underline to indicate it's clickable */
+    cursor: pointer;
+    display: inline-block; /* To properly apply margin */
+    margin-top: 10px;
+}
+
+.add-to-cart:hover {
+    color: #0056b3; /* Darker blue on hover for interaction feedback */
+}
+
+/* Responsive adjustments for gift cards */
+@media (max-width: 768px) {
+    .gift-card {
+        margin-bottom: 15px;
+    }
+}
+
+
+
+
+
 
 /* Sidebar styles */
 .sidebar {
@@ -192,14 +285,15 @@ h2, h3 {
 
 /* Footer styles */
 .footer {
-    position: fixed;
     background-color: #2c2e3f; /* Adjust to match your color scheme */
     color: #ffffff;
-    padding: 20px 0;
+    /* padding: 20px 0; */
+    /* padding: 10px 10px; */
     left: 0;
     bottom: 0;
     height: 150px;
     width: 100%;
+    
 }
 
 .footer .container {
@@ -216,6 +310,8 @@ h2, h3 {
 .footer-section {
     /* ... existing styles ... */
     max-width: 200px; /* Control the width of the footer sections */
+    margin: 10px ;
+    
 }
 
 .footer-section p {

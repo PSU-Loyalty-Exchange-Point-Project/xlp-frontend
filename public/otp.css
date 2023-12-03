@@ -1,0 +1,49 @@
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px; /* Increased width */
+    text-align: center;
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal-logo {
+    text-align: center;
+    height: 110px;
+    margin-left: 110px;
+}
+
+
+
+/* Input and Button Styles */
+#otpInput, .modal-content button {
+    width: 100%; /* Full width */
+    margin-top: 10px; /* Spacing */
+    padding: 8px; /* Padding for input and button */
+}
+

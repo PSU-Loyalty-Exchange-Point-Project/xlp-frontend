@@ -155,32 +155,6 @@ h2, h3 {
     margin-bottom: 20px;
 }
 
-/* Styles for the View Cart Button */
-.view-cart {
-    position: fixed;
-    top: 30px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
-}
-
-.btn-cart {
-    background-color:#f1f3ff; /* Button background color */
-    color: #ffffff; /* Button text color */
-    border: none; /* Remove border */
-    font-size: 1em; /* Size of the text and symbol */
-    cursor: pointer;
-    width: 50px; /* Square shape */
-    height: 50px; /* Square shape */
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    border-radius: 5px; /* Optional: Rounded corners */
-}
-
-.btn-cart:hover {
-    background-color: #87b5e7; /* Darker color on hover */
-}
-
-/* ... Rest of the styles ... */
 
 
 

@@ -207,13 +207,15 @@ h2, h3 {
     justify-content: space-between; /* This will push the bottom section to the end */
 }
 
-.sidebar-brand {
-    text-align: center;
-    font-weight: bold;
- /* Spacing below the brand name */
-    font-size: 20px;
+.sidebar-logo {
+    text-align: center; /* Center the logo */
+    margin-bottom: 20px; /* Space below the logo */
 }
 
+.sidebar-logo img {
+    max-height: 100px; /* Adjust as needed */
+    width: auto; /* Maintain aspect ratio */
+}
 .sidebar-middle {
     display: flex;
     flex-direction: column;
@@ -294,7 +296,7 @@ h2, h3 {
     margin: 5px 0; /* Adjust spacing between lines */
 }
 
-/* ... Rest of the styles ... */
+
 
 
 .footer-title {

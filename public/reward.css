@@ -1,0 +1,236 @@
+body {
+    background-color: #3c3e4a; /* Background color */
+    color: #fff; /* Text color for readability */
+    font-family: 'Arial', sans-serif; /* Set a default font */
+}
+
+.container {
+    max-width: 1200px; /* Set a max-width for the container */
+}
+
+h2, h3 {
+    color: #f0ad4e; /* Header color */
+}
+
+/* Button styling */
+.btn-custom {
+    width: 100%; /* Makes the button span the full width of the container */
+}
+
+
+/* Button styles */
+.btn-custom {
+    background-color: #f0ad4e; /* Custom button color */
+    color: #ffffff; /* Text color for buttons */
+    border-radius: 5px; /* Rounded corners for buttons */
+}
+
+.btn-custom:hover {
+    background-color: #ec971f; /* Button hover color */
+    color: #ffffff;
+}
+
+.card-points {
+    font-size: 2em;
+    color: #f0ad4e !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gift-card {
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: red; */
+    background-color: #484a55;
+    padding: 1em;
+    border-radius: 10px;
+    color: white !important;
+}
+
+.gift-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: red; */
+    background-color: #484a55;
+}
+
+.gift-cond{
+    text-align: left;
+}
+
+/* Additional styles for balance display */
+.balance-display {
+    background-color: #484a55;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.points-balance {
+    font-size: 2em;
+    color: #f0ad4e;
+}
+.btn-add-balance {
+    background-color: transparent;
+    font-weight: bold;
+    color: #faf2e8; /* Color of the button */
+    border: none; /* No border */
+    font-size: 1.3em; /* Size of the plus symbol */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    /*margin-left:5px; Space between the text and the button */
+    vertical-align: middle; /* Align with the text */
+}
+.btn-add-balance:hover {
+    color: rgb(255, 255, 255); /* Change color on hover */
+     /* Change background on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .balance-display, .card {
+        margin: 0 10px;
+    }
+}
+
+/* Styles for the transaction list */
+.transaction-card {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.gift-card p, .gift-card  {
+    font-weight: bold; /* Make text bold */
+    color: #000000; /* Ensuring text is black */
+}
+
+/* Responsive adjustments for gift cards */
+@media (max-width: 768px) {
+    .gift-card {
+        margin-bottom: 15px;
+    }
+}
+
+
+
+
+
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #2c2e3f;
+    color: #ffffff;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This will push the bottom section to the end */
+}
+
+.sidebar-logo {
+    text-align: center; /* Center the logo */
+    margin-bottom: 20px; /* Space below the logo */
+}
+
+.sidebar-logo img {
+    max-height: 100px; /* Adjust as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+.sidebar-middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center; /* Center buttons vertically */
+}
+
+.sidebar-button {
+    margin-bottom: 20px; /* Spacing between buttons */
+    width: 100%; /* Full width buttons */
+}
+
+.sidebar-bottom {
+    text-align: center;
+    margin-top: auto; /* Push to the bottom */
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 250px; /* Same as sidebar width */
+    /* ... other styles ... */
+}
+
+
+    .main-content {
+        margin-left: 0;
+    }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+
+
+/* Footer styles */
+.footer {
+    background-color: #2c2e3f; /* Adjust to match your color scheme */
+    color: #ffffff;
+    /* padding: 20px 0; */
+    /* padding: 10px 10px; */
+    left: 0;
+    bottom: 0;
+    height: 150px;
+    width: 100%;
+    
+}
+
+.footer .container {
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly; /* Evenly space items */
+    flex-wrap: wrap; /* Wrap items for smaller screens */
+}
+
+.footer-section {
+    text-align: center; /* Center the text within each section */
+    margin-bottom: 10px;
+}
+.footer-section {
+    /* ... existing styles ... */
+    max-width: 200px; /* Control the width of the footer sections */
+    margin: 10px ;
+    
+}
+
+.footer-section p {
+    font-size: 0.9em; /* Adjust font size for the description */
+    color: #dcdcdc; /* Lighter color for the description text */
+    margin: 5px 0; /* Adjust spacing between lines */
+}
+
+
+
+
+.footer-title {
+    font-weight: bold;
+    color: #f0ad4e;
+    margin-bottom: 5px; /* Space between title and text */
+}
+
+    .footer-section {
+        margin-bottom: 20px;
+    }

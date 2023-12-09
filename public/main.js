@@ -38,3 +38,4 @@ function toggleTransactions() {
       button.textContent = 'Show More'; // Change button text
   }
 }
+

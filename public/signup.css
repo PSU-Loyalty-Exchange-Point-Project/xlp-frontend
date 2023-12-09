@@ -148,6 +148,22 @@ body {
   padding: 80px 0; 
  }
 
+ .side-image {
+  position:absolute;
+  width: 20%; /* or your desired width */
+  bottom: 0;
+}
+.left-image {
+  left:40px;
+  width: 25%;
+  top: 210px;
+}
+.right-image {
+  right: 110px;
+  width: 14%;
+  top: 180px;}
+
+  
 .container {
   width: 700px;
   position: relative;

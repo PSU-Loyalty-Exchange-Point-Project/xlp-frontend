@@ -156,6 +156,12 @@ h2, h3 {
 }
 
 
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 
 
 

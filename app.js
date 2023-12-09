@@ -60,27 +60,8 @@ app.post('/account/login', async (request, response) => {
 
     let { status, data } = await sendRequest('post', '/account/login', { email: email, password: password });
     
-    console.log(request.cookies['connect.sid']);
-    let refreshTokenObject = data.refreshTokenObject;
-    let accessTokenObject = data.access_token;
-    console.log(refreshTokenObject);
-
-    // console.log(refreshTokenObject);
     if (status == 200)
-        response.cookie(
-            "access_token", 
-            accessTokenObject.token, 
-            accessTokenObject.options
-            )
-            .cookie(
-                "connect.sid",
-                refreshTokenObject.token,
-                {
-                    maxAge: refreshTokenObject.options.originalMaxAge,
-                    path: refreshTokenObject.options.path,
-                    httpOnly: refreshTokenObject.options.httpOnly,
-                }
-            )
+        response
             .redirect('/dashboard'); // Path=/; HttpOnly; Expires=Sat, 04 Nov 2023 23:35:15 GMT;
     else
         response.redirect('/account/login');
@@ -94,11 +75,11 @@ app.post('/account/logout', checkAuthorization, async (request, response) => {
         return response.sendStatus(400);
 });
 
-app.get('/dashboard', checkAuthorization, async (request, response) => {
+app.get('/dashboard', async (request, response) => {
 
     // await checkAuthorization(request.cookies.access_token);
 
-    response.render('dashboard/dashboard');
+    return response.render('dashboard');
 });
 
 

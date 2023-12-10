@@ -1,29 +1,35 @@
 const express = require('express');
 const axios = require('axios');
-// const session = require('express-session');
 const cookieParser = require('cookie-parser');
-const { Console } = require('console');
+const session = require('express-session');
 
-const app = express();
+require('dotenv').config();
+
+
 
 // ----------- APP setup ----------- 
+const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public')); 
-app.use(cookieParser())
-
-// app.use(session({ secret: "very secret key do not lose it" }));
+app.use(session({
+    secret: process.env.SECRET_KEY,
+    resave: false,
+    saveUninitialized: true
+}));
+app.use(cookieParser());
 app.set('view engine', 'ejs');
 
+
+// ----------- Middleware ----------- 
+
 let checkAuthorization = async (request, response, next) => {
-    console.log('Check Authorization Triggered');
     let access_token = request.cookies.access_token;
 
     if (access_token == null) return response.redirect('/account/login')
 
-    let { status } = await sendRequest('post', `/account/check-authorization`, { access_token: access_token });
+    let { statusCode } = await sendPostRequest(`/account/check-authorization`, { access_token: access_token });
 
-
-    if (status != 200) {
+    if (statusCode != 200) {
         return response.redirect('/account/login');
     }   
     else {
@@ -36,74 +42,138 @@ let checkAuthorization = async (request, response, next) => {
 
 app.get('/account/signup', (request, response) => {
 
-    response.render('signup');
+    return response.render('signup');
 });
 
-app.get('/account/dashboard', (request, response) => {
+app.post('/account/signup', async (request, response) => {
+    let { name, email, password, rePassword, countryCode, phoneNumber } = request.body;
+    
+    try {
+        let { statusCode, data } = await sendPostRequest('/account/register', { name: name, email: email, password: password, rePassword: rePassword, countryCode: countryCode, phoneNumber: phoneNumber });
+        
+        if (statusCode != 201)
+            throw data.message;
 
-    response.render('dashboard');
+        return response.redirect(`/account/verify-otp/${data.uid}`)
+
+    } catch (error) {
+        console.error(error);
+        return response.redirect(`/account/signup`)
+    }
 });
 
+app.get('/account/verify-otp/:uid', async (request, response) => {
+    let uid = request.params.uid;
 
-app.post('/account/signup', (request, response) => {
+    try {
+        let { statusCode, data } = await sendGetRequest(`/account/verify-otp/${uid}`);
+        if (statusCode != 200)
+            throw "Error";
 
-    response.render('signup');
-});
+        return response.render('otp', { data: data });
+    } catch (error) {
+
+        return response.redirect(`/account/verify-otp/${uid}`);
+    }
+})
+
+app.post('/account/verify-otp/:uid', async (request, response) => {
+    let { code } = request.body;
+    let uid = request.params.uid;
+    try {
+        let { statusCode, data } = await sendPostRequest(`/account/verify-otp/${uid}`, { code: code });
+
+        if (statusCode != 200)
+            throw data.message;
+
+        if (data.redirectLocation == "/dashboard") 
+            response.cookie("access_token", data.headers.access_token.token, data.headers.access_token.options);
+
+        return response.redirect(data.redirectLocation);
+       
+    } catch (error) {
+        console.error(error);
+        return response.redirect(`/account/verify-otp/${uid}`);
+    }
+})
+
 
 app.get('/account/login', (request, response) => {
 
-    response.render('login');
-});
+    return response.render('login');
+})
 
 app.post('/account/login', async (request, response) => {
     let { email, password } = request.body;
-
-    let { status, data } = await sendRequest('post', '/account/login', { email: email, password: password });
+    try {
+        let { statusCode, data } = await sendPostRequest('/account/login', { email: email, password: password });
+        
+        if (statusCode != 200)
+            throw data.message;
     
-    if (status == 200)
-        response
-            .redirect('/dashboard'); // Path=/; HttpOnly; Expires=Sat, 04 Nov 2023 23:35:15 GMT;
-    else
-        response.redirect('/account/login');
-});
+        return response.redirect(`/account/verify-otp/${data.uid}`)
+    } catch (error) {
+
+        return response.redirect('/account/login');
+    }
+})
 
 app.post('/account/logout', checkAuthorization, async (request, response) => {
-    let { status, data } = await sendRequest('post', '/account/logout', { access_token: request.cookies.access_token });
-    if (status == 200) 
-        return response.clearCookie('access_token').clearCookie('connect.sid').redirect('/account/login');
+    let { statusCode, data } = await sendPostRequest('/account/logout', {},  { access_token: request.cookies.access_token });
+    if (statusCode == 200) 
+        return response.clearCookie('access_token').redirect('/account/login');
     else
-        return response.sendStatus(400);
+        return response.redirect('/dashboard');
 });
 
-app.get('/dashboard', async (request, response) => {
+var moment = require('moment');
 
-    // await checkAuthorization(request.cookies.access_token);
-
-    return response.render('dashboard');
+app.get('/dashboard', checkAuthorization, async (request, response) => {
+    
+    
+    try { 
+        let { statusCode, data } = await sendGetRequest('/dashboard', {}, { access_token: request.cookies.access_token })
+        if (!statusCode)
+            throw "Error rendering dashboard";
+        return response.render('dashboard', { data: data, moment: moment });
+    } catch (error) {
+        return response.status(400).send(error);
+    }
 });
 
 
-let sendRequest = async (method, path, body) => {
+let sendGetRequest = async (path = "", body = {}, headers = {}) => {
     return axios({
-        method: method,
+        method: 'get',
+        headers: headers,
         url: `http://localhost:8080${path}`,
         data: body
     }).then((response) => {
-        console.log(response.headers['set-cookie']['connect.sid']);
-        return { status: response.status, data: response.data };
-    }).catch((error) => {
-
-        return { status: 400, data: {} };
+        return { statusCode: response.status, data: response.data };
+      }).catch((error) => {
+        return { statusCode: error.response.status, data: error.response.data };
     });
-
+    
 }
 
-
+let sendPostRequest = async (path = "", body = {}, headers = {}) => {
+    return axios({
+        method: 'post',
+        headers: headers,
+        url: `http://localhost:8080${path}`,
+        data: body
+    }).then((response) => {
+        return { statusCode: response.status, data: response.data };
+      }).catch((error) => {
+        return { statusCode: error.response.status, data: error.response.data };
+    });
+    
+}
 
 app.use((request, response) => {
     response.status(404).json({error: "Resource not found"});
-});
+})
 
 app.listen(8000, "localhost", () => { 
     console.log(`Starting development server at http://localhost:8000`) 
-});
+})

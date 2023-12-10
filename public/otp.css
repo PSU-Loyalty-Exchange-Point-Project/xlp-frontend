@@ -41,7 +41,7 @@
 
 
 /* Input and Button Styles */
-#otpInput, .modal-content button {
+#otpInput, .modal-content .button {
     width: 100%; /* Full width */
     margin-top: 10px; /* Spacing */
     padding: 8px; /* Padding for input and button */

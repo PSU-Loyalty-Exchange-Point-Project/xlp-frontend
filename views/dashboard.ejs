@@ -23,7 +23,7 @@
               <div class="col-md-6">
                   <div class="balance-display">
                        <h2>Current Balance <button class="btn-add-balance">+</button></h2>
-                      <p class="points-balance">$13910</p>
+                      <p class="points-balance"><%= data.balance %> Points</p>
                   </div>
               </div>
           </div>
@@ -37,14 +37,18 @@
                     <h3>Recent Transactions</h3>
                       <!-- Example Transactions (First two will be initially visible) -->
                       <ul class="list-group list-group-flush" id="transaction-list">
-                          <li class="list-group-item">Add From [org. name] $123 </li>
+                        <% data.transactions.forEach(transaction => { %>
+                            <li class="list-group-item"><%= transaction.type %> <%= transaction.amount %> Points at <%= moment(transaction.createdAt).format('lll') %></li>
+                        <% }) %>
+                        
+                          <!-- <li class="list-group-item">Add From [org. name] $123 </li>
                           <li class="list-group-item"> Redeem $857483</li>
                           <li class="list-group-item extra">Redeem $7483</li>
-                          <li class="list-group-item extra">Add From [org. name] $3</li>
+                          <li class="list-group-item extra">Add From [org. name] $3</li> -->
                           <!-- More transactions will be added here and initially hidden -->
                       </ul>
                   </div>
-                  <button class="btn btn-custom mt-2" id="toggleButton" onclick="toggleTransactions()">Show More</button>
+                  <!-- <button class="btn btn-custom mt-2" id="toggleButton" onclick="toggleTransactions()">Show More</button> -->
               </div>
               
           </div>
@@ -130,7 +134,9 @@
         <button class="btn btn-secondary sidebar-button">Redeem</button>
     </div>
     <div class="sidebar-signout">
-        <button class="btn btn-warning btn-sm">Sign Out</button>
+        <form action="/account/logout" method="post">
+            <input type="submit" class="btn btn-warning btn-sm" value="Sign Out">
+        </form>
     </div>
 </div>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/public/otp.css">
+    <link rel="stylesheet" href="/otp.css">
 </head>
 <body>
 
@@ -16,13 +16,16 @@
         <div class="modal-content">
             <!-- Logo at the top left -->
             <div class="modal-header">
-                <img src="\public\logo\logo2.jpg" alt="Logo" class="modal-logo">
+                <img src="/logo/logo2.png" alt="Logo" class="modal-logo">
                 
             </div>
             <h2>OTP Verification</h2>
-            <p>Please enter the OTP sent to your number:</p>
-            <input type="text" id="otpInput" placeholder="Enter OTP">
-            <button onclick="verifyOtp()">Verify</button>
+            <p>Please enter the OTP sent to your number: <%= data.userPhoneNumber %></p>
+            <form method="post">
+                <input type="text" name="code" id="otpInput" placeholder="123456" pattern="[a-z0-9.\-]{6}" minlength="6" maxlength="6" required>
+                <input class="button" type="submit" value="Verify OTP">
+            </form>
+            <!-- <button onclick="verifyOtp()">Verify</button> -->
         </div>
     </div>
 

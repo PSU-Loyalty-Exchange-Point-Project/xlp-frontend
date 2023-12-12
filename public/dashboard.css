@@ -259,6 +259,21 @@ h2, h3 {
         margin-left: 0;
     }
 
+
+    .side-image {
+        position:absolute;
+        width: 20%; /* or your desired width */
+        bottom: 0;
+      }
+      .left-image {
+        left:40px;
+        width: 25%;
+        top: 210px;
+      }
+      .right-image {
+        right: 110px;
+        width: 14%;
+        top: 180px;}
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .sidebar {

@@ -42,6 +42,7 @@
     align-items: start;
     justify-content: space-evenly; /* Evenly space items */
     flex-wrap: wrap; /* Wrap items for smaller screens */
+<<<<<<< Updated upstream
     overflow: auto;
     
 =======

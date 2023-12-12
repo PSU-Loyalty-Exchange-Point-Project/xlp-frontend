@@ -13,12 +13,18 @@
    /* Space out the content and logo */
     align-items: center; /* Align items vertically */
     position: static;
+<<<<<<< Updated upstream
     margin-top: auto;
+=======
+>>>>>>> Stashed changes
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 /* Logo in the footer */
 .footer-logo img {
     height: 150px; /* Adjust the size as needed */
@@ -38,6 +44,8 @@
     flex-wrap: wrap; /* Wrap items for smaller screens */
     overflow: auto;
     
+=======
+>>>>>>> Stashed changes
 }
 
 .footer-section {
@@ -62,6 +70,12 @@
     margin-bottom: 5px; /* Space between title and text */
 }
 
+<<<<<<< Updated upstream
     /* .footer-section {
         margin-bottom: 20px;
     } */
+=======
+    .footer-section {
+        margin-bottom: 20px;
+    }
+>>>>>>> Stashed changes

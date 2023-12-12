@@ -141,6 +141,28 @@ app.get('/dashboard', checkAuthorization, async (request, response) => {
     }
 });
 
+app.get('/gift-card/redeem', checkAuthorization, async (request, response) => {
+    try { 
+        return response.render('add');
+    } catch (error) {
+        return response.status(400).send(error);
+    }
+});
+
+app.post('/gift-card/redeem', checkAuthorization, async (request, response) => {
+    let { giftCardNumber } = request.body;
+    try { 
+        let { statusCode, data } = await sendPostRequest('/gift-card/redeem', { giftCardNumber: giftCardNumber },  { access_token: request.cookies.access_token });
+        
+        if (statusCode != 200)
+            throw data.message;
+
+        return response.redirect('/dashboard');
+    } catch (error) {
+        return response.status(400).send(error);
+    }
+});
+
 
 let sendGetRequest = async (path = "", body = {}, headers = {}) => {
     return axios({

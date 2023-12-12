@@ -13,18 +13,26 @@
    /* Space out the content and logo */
     align-items: center; /* Align items vertically */
     position: static;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     margin-top: auto;
 =======
 >>>>>>> Stashed changes
+=======
+    margin-top: auto;
+>>>>>>> c2412286f4ed7f1594fd48c1ed72ce8229e024cc
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 
 =======
 >>>>>>> Stashed changes
+=======
+
+>>>>>>> c2412286f4ed7f1594fd48c1ed72ce8229e024cc
 /* Logo in the footer */
 .footer-logo img {
     height: 150px; /* Adjust the size as needed */
@@ -42,11 +50,16 @@
     align-items: start;
     justify-content: space-evenly; /* Evenly space items */
     flex-wrap: wrap; /* Wrap items for smaller screens */
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     overflow: auto;
     
 =======
 >>>>>>> Stashed changes
+=======
+    overflow: auto;
+    
+>>>>>>> c2412286f4ed7f1594fd48c1ed72ce8229e024cc
 }
 
 .footer-section {
@@ -71,6 +84,7 @@
     margin-bottom: 5px; /* Space between title and text */
 }
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     /* .footer-section {
         margin-bottom: 20px;
@@ -80,3 +94,8 @@
         margin-bottom: 20px;
     }
 >>>>>>> Stashed changes
+=======
+    /* .footer-section {
+        margin-bottom: 20px;
+    } */
+>>>>>>> c2412286f4ed7f1594fd48c1ed72ce8229e024cc

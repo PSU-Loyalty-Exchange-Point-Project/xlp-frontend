@@ -145,12 +145,32 @@ body {
   -o-background-size: cover;
   -ms-background-size: cover;
   background-position: center center;
+  height: 100%;
+  margin: 0;
   padding: 80px 0; }
 
-.container {
-  width: 700px;
-  position: relative;
-  margin: 0 auto; }
+
+.side-image {
+    position: absolute;
+     /* or your desired width */
+    bottom: 0;
+}
+.left-image {
+    left: -27px;
+    width: 27%;
+    top: 160px;
+}
+.right-image {
+    right: -325px;
+    width: 30%;
+    top: 100px;}
+
+    .container {
+      width: 700px;
+      position: relative;
+      margin: 0 auto; }
+
+
 
 .display-flex {
   justify-content: space-between;

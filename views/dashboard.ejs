@@ -6,7 +6,8 @@
     <title>Loyalty Points Dashboard</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
       <!-- Main css -->
-      <link rel="stylesheet" href="/public/dashboard.css">
+      <link rel="stylesheet" href="/dashboard.css">
+      <link rel="stylesheet" href="/footer.css">
     
       </head>
       <body>
@@ -60,35 +61,36 @@
                             <div class="col-md-4">
                                 <div class="gift-card">
                                     <p>Gift Card 1 - Price: 500 Points</p>
-                                    <span class="add-to-cart">Add to Cart 🛒 </span>
+                                    <span class="redeem"> Redeem 🎁</span>
+                                    
                                 </div>
                             </div>
                             <!-- Gift Card 2 -->
                             <div class="col-md-4">
                                 <div class="gift-card">
                                     <p>Gift Card 2 - Price: 1000 Points</p>
-                                    <span class="add-to-cart">Add to Cart 🛒 </span>
+                                    <span class="redeem"> Redeem 🎁</span>
                                 </div>
                             </div>
                             <!-- Gift Card 3 -->
                             <div class="col-md-4">
                                 <div class="gift-card">
                                     <p>Gift Card 3 - Price: 1500 Points</p>
-                                    <span class="add-to-cart">Add to Cart 🛒 </span>
+                                    <span class="redeem"> Redeem 🎁</span>
                                 </div>
                             </div>
                             <!-- Gift Card 4 -->
                             <div class="col-md-4">
                                 <div class="gift-card">
                                     <p>Gift Card 4 - Price: 1500 Points</p>
-                                    <span class="add-to-cart">Add to Cart 🛒 </span>
+                                    <span class="redeem"> Redeem 🎁</span>
                                 </div>
                             </div>
                             <!-- Gift Card 5 -->
                             <div class="col-md-4">
                                 <div class="gift-card">
                                     <p>Gift Card 5 - Price: 1500 Points</p>
-                                    <span class="add-to-cart">Add to Cart 🛒 </span>
+                                    <span class="redeem"> Redeem 🎁</span>
                                 </div>
                             </div>
                             <!-- More gift cards can be added in similar fashion -->
@@ -117,64 +119,33 @@
 
         <!-- Logo at the Top -->
         <div class="sidebar-logo">
-            <img src="/public/logo/logo.jpg" alt="Logo">
+            <img src="/logo/logo2.png" alt="Logo">
         </div>
     
 
     <!-- Buttons in the Middle -->
     <div class="sidebar-middle">
         <button class="btn btn-primary sidebar-button">Add Balance</button>
-        <button class="btn btn-custom sidebar-button">My Cart</button>
+        
         <button class="btn btn-secondary sidebar-button">Redeem</button>
     </div>
-
-</div>
-    
-      
-          
-          <!-- Footer -->
-          <footer class="footer">
-              <div class="container">
-        
-        <div class="footer-section">
-            <div class="footer-title">About</div>
-            <p>Line 1 ofewrgm32f;</p>
-            <p>Line 2 of escriptio</p>
-            <p>Line 3 of t2ption24qe.</p>
-            <p>Line 42rdetionfr4</p>
-        </div>
-
-                  <div class="footer-section">
-                      <div class="footer-title">Contact</div>
-                      <p>219110302@psu.edu.sa</p>
-                  </div>
-                  <div class="footer-section">
-                    <div class="footer-title">Terms of Service</div>
-                    <p>Get in touch with us</p>
-                </div>
-                  <div class="footer-section">
-
-                      <button class="btn btn-warning btn-sm" id="signOutButton">sign out</button>
-                  </div>
-              </div>
-          </footer>
-          
-          
+    <div class="sidebar-signout">
+        <button class="btn btn-warning btn-sm">Sign Out</button>
     </div>
 </div>
-    
-    
-</div>
-</div>
-          
-          
-          
 
+<img src="/logo/aaa.png" alt="Decorative Image" class="side-image right-image">
+
+
+          
+          
+          
+        <%- include ('partials/footer') %>
 
 
       
   
-      <script src="/js/main.js"></script>
+      <script src="/main.js"></script>
       
       </body>
       </html>

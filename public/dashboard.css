@@ -156,6 +156,12 @@ h2, h3 {
 }
 
 
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 
 
 
@@ -168,17 +174,19 @@ h2, h3 {
 
 
 
-.add-to-cart {
+/* Styles for the Redeem link */
+.redeem {
     color: #007bff; /* Blue color for the link */
-    text-decoration: none; /* Underline to indicate it's clickable */
     cursor: pointer;
     display: inline-block; /* To properly apply margin */
     margin-top: 10px;
+    text-decoration: none; /* Remove underline */
 }
 
-.add-to-cart:hover {
+.redeem:hover {
     color: #0056b3; /* Darker blue on hover for interaction feedback */
 }
+
 
 /* Responsive adjustments for gift cards */
 @media (max-width: 768px) {
@@ -213,7 +221,7 @@ h2, h3 {
 }
 
 .sidebar-logo img {
-    max-height: 100px; /* Adjust as needed */
+    max-height: 150px; /* Adjust as needed */
     width: auto; /* Maintain aspect ratio */
 }
 .sidebar-middle {
@@ -229,6 +237,12 @@ h2, h3 {
     width: 100%; /* Full width buttons */
 }
 
+
+.sidebar-signout {
+    margin-top: auto; /* Push to the bottom */
+    padding: 10px; /* Add some padding */
+    text-align: center;
+}
 .sidebar-bottom {
     text-align: center;
     margin-top: auto; /* Push to the bottom */
@@ -245,6 +259,21 @@ h2, h3 {
         margin-left: 0;
     }
 
+
+    .side-image {
+        position:absolute;
+        width: 20%; /* or your desired width */
+        bottom: 0;
+      }
+      .left-image {
+        left:40px;
+        width: 25%;
+        top: 210px;
+      }
+      .right-image {
+        right: 110px;
+        width: 14%;
+        top: 180px;}
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .sidebar {
@@ -258,53 +287,3 @@ h2, h3 {
 }
 
 
-
-/* Footer styles */
-.footer {
-    background-color: #2c2e3f; /* Adjust to match your color scheme */
-    color: #ffffff;
-    /* padding: 20px 0; */
-    /* padding: 10px 10px; */
-    left: 0;
-    bottom: 0;
-    height: 150px;
-    width: 100%;
-    
-}
-
-.footer .container {
-    display: flex;
-    align-items: start;
-    justify-content: space-evenly; /* Evenly space items */
-    flex-wrap: wrap; /* Wrap items for smaller screens */
-}
-
-.footer-section {
-    text-align: center; /* Center the text within each section */
-    margin-bottom: 10px;
-}
-.footer-section {
-    /* ... existing styles ... */
-    max-width: 200px; /* Control the width of the footer sections */
-    margin: 10px ;
-    
-}
-
-.footer-section p {
-    font-size: 0.9em; /* Adjust font size for the description */
-    color: #dcdcdc; /* Lighter color for the description text */
-    margin: 5px 0; /* Adjust spacing between lines */
-}
-
-
-
-
-.footer-title {
-    font-weight: bold;
-    color: #f0ad4e;
-    margin-bottom: 5px; /* Space between title and text */
-}
-
-    .footer-section {
-        margin-bottom: 20px;
-    }

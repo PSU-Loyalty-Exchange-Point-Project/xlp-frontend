@@ -10,13 +10,18 @@
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="/public/login.css">
+    <link rel="stylesheet" href="/login.css">
+    <link rel="stylesheet" href="/footer.css">
 </head>
 <body>
-
+<main>
     <div class="main">
 
+
         <section class="signup">
+              <!-- Left Image -->
+              <img src="/logo/logo2.png" alt="Decorative Image" class="side-image left-image">
+              <div class="container">
             <div class="container">
                 <div class="signup-content">
                     <form method="POST" id="signup-form" class="signup-form">
@@ -34,12 +39,20 @@
                         </div>
                     </form>
                     <p class="loginhere">
-                        Don't Have an account? <a href="signup.html" class="loginhere-link">Create an Account</a>
+                        Don't Have an account? <a href="/account/signup" class="loginhere-link">Create an Account</a>
                     </p>
                 </div>
             </div>
+               <!-- Right Image -->
+               <img src="/logo/aaa.png" alt="Decorative Image" class="side-image right-image">
+            
         </section>
     </div>
+</main>
+    <br>
+     <%- include ('partials/footer.ejs') %> 
+
+    
 
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>

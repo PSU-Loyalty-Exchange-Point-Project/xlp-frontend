@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    max-width: 1200px; /* Set a max-width for the container */
+    max-width: 1200px;  /* Set a max-width for the container */
 }
 
 h2, h3 {

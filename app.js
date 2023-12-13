@@ -135,6 +135,7 @@ app.get('/dashboard', checkAuthorization, async (request, response) => {
         let { statusCode, data } = await sendGetRequest('/dashboard', {}, { access_token: request.cookies.access_token })
         if (!statusCode)
             throw "Error rendering dashboard";
+
         return response.render('dashboard', { data: data, moment: moment });
     } catch (error) {
         return response.status(400).send(error);
@@ -163,6 +164,30 @@ app.post('/gift-card/redeem', checkAuthorization, async (request, response) => {
     }
 });
 
+app.get('/reward/:rewardId', checkAuthorization, async (request, response) => {
+    try { 
+        let rewardId = request.params.rewardId;
+        let { statusCode, data } = await sendGetRequest(`/reward/${rewardId}`, {},  {});
+        if (statusCode != 200)
+            throw data.message;
+
+        return response.render('reward', { data: data });
+    } catch (error) {
+        return response.status(400).send(error);
+    }
+});
+
+app.post('/reward/:rewardId', checkAuthorization, async (request, response) => {
+    try { 
+        let rewardId = request.params.rewardId;
+        let { statusCode, data } = await sendPostRequest(`/reward/${rewardId}`, {}, { access_token: request.cookies.access_token });
+        if (statusCode != 200)
+            throw data.message;
+        return response.render('discount', { data: data });
+    } catch (error) {
+        return response.status(400).send(error);
+    }
+});
 
 let sendGetRequest = async (path = "", body = {}, headers = {}) => {
     return axios({

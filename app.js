@@ -178,14 +178,17 @@ app.get('/reward/:rewardId', checkAuthorization, async (request, response) => {
 });
 
 app.post('/reward/:rewardId', checkAuthorization, async (request, response) => {
+    let rewardId;
     try { 
-        let rewardId = request.params.rewardId;
+        rewardId = request.params.rewardId;
         let { statusCode, data } = await sendPostRequest(`/reward/${rewardId}`, {}, { access_token: request.cookies.access_token });
         if (statusCode != 200)
             throw data.message;
+
+        console.log(data);
         return response.render('discount', { data: data });
     } catch (error) {
-        return response.status(400).send(error);
+        return response.redirect(`/reward/${rewardId}`);
     }
 });
 

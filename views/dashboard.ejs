@@ -61,42 +61,44 @@
                     <div class="gift-cards-container">
                         <h3>Available Rewards</h3>
                         <div class="row">
-                            <!-- Gift Card 1 -->
+                            <!--  Gift Card -->
+                            <% data.rewards.forEach(reward => { %>
                             <div class="col-md-4">
                                 <div class="gift-card">
-                                    <p>Gift Card 1 - Price: 500 Points</p>
-                                    <span class="redeem"> Redeem 🎁</span>
+                                    <p><%= reward.name %> <br> <span class="text-secondary"><%= reward.price %> Points</span></p>
+                                    <a class="redeem text-primary" href="/reward/<%= reward.id %>"> Redeem 🎁</a>
                                     
                                 </div>
                             </div>
+                            <% }) %>
                             <!-- Gift Card 2 -->
-                            <div class="col-md-4">
+                            <!-- <div class="col-md-4">
                                 <div class="gift-card">
                                     <p>Gift Card 2 - Price: 1000 Points</p>
                                     <span class="redeem"> Redeem 🎁</span>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- Gift Card 3 -->
-                            <div class="col-md-4">
+                            <!-- <div class="col-md-4">
                                 <div class="gift-card">
                                     <p>Gift Card 3 - Price: 1500 Points</p>
                                     <span class="redeem"> Redeem 🎁</span>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- Gift Card 4 -->
-                            <div class="col-md-4">
+                            <!-- <div class="col-md-4">
                                 <div class="gift-card">
                                     <p>Gift Card 4 - Price: 1500 Points</p>
                                     <span class="redeem"> Redeem 🎁</span>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- Gift Card 5 -->
-                            <div class="col-md-4">
+                            <!-- <div class="col-md-4">
                                 <div class="gift-card">
                                     <p>Gift Card 5 - Price: 1500 Points</p>
                                     <span class="redeem"> Redeem 🎁</span>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- More gift cards can be added in similar fashion -->
                         </div>
                     </div>
@@ -129,9 +131,9 @@
 
     <!-- Buttons in the Middle -->
     <div class="sidebar-middle">
-        <button class="btn btn-primary sidebar-button">Add Balance</button>
+        <a class="btn btn-primary sidebar-button" href="/gift-card/redeem">Add Balance</a>
         
-        <button class="btn btn-secondary sidebar-button">Redeem</button>
+        <!-- <button class="btn btn-secondary sidebar-button">Redeem</button> -->
     </div>
     <div class="sidebar-signout">
         <form action="/account/logout" method="post">

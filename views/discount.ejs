@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loyalty Points Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Main css -->
+    <link rel="stylesheet" href="/reward.css">
+</head>
+<body>
+    <div class="container text-center ">
+        <!-- Total Points Balance (Centered) -->
+        <div class="row justify-content-center" style="margin-top: 10vh;">
+            <div class="col-md-6">
+                <div class="gift-card">
+                    <div class="gift-card-header">
+                        <h2 class="mx-auto">Reward Redeemed</h2>
+                        <!-- <p class="card-points">10%</p> -->
+                    </div>
+                    <div>
+                        <input type="text" class="form-input" value="<%= data.number %>" id="myInput" readonly>
+                        <button onclick="myFunction()">Copy text</button>
+                    </div>
+                    <script>
+                        function myFunction() {
+                          // Get the text field
+                          var copyText = document.getElementById("myInput");
+                        
+                          // Select the text field
+                          copyText.select();
+                          copyText.setSelectionRange(0, 99999); // For mobile devices
+                        
+                          // Copy the text inside the text field
+                          navigator.clipboard.writeText(copyText.value);
+                          
+                          // Alert the copied text
+                        }
+                        </script>
+                    <a href="/dashboard" class="btn btn-custom mt-2">Back to Dashboard</a>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+    
+        <br />
+    </div>
+
+   
+
+</body>
+
+</html>
